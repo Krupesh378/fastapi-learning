@@ -117,8 +117,18 @@ uvicorn app.main:app --reload
 Visit:
 
 - API Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
+---
+## Run within Docker
+
+```bash
+docker run -d \
+  --name fastapi-crud-container \
+  -p 8000:8000 \
+  fastapi-crud-app:multi-stage
+```
+
+## Note: Before run within docker file please make sure you should installed/run postgresql.
 ---
 
 ## 📬 Available Endpoints
