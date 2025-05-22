@@ -57,7 +57,8 @@ def load_and_post_users_concurrently(n: int = 50, max_works: int = 10):
 
 
 if __name__ == "__main__":
-    load_and_post_users_concurrently(
-        n=1,
-        max_works=20
-    )
+    for itr in range(5000):
+        load_and_post_users_concurrently(
+            n=5000,
+            max_works=20
+        )

@@ -1,6 +1,5 @@
 """This module contains; request and response model structure"""
 from pydantic import BaseModel
-from datetime import datetime
 
 
 class UserBase(BaseModel):

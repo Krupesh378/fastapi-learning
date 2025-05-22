@@ -20,4 +20,4 @@ async def get_user(session: AsyncSession, user_id: int):
 
 async def get_all_users(session: AsyncSession, skip: int = 0, limit: int = 10):
     result = await session.execute(select(models.User).offset(skip).limit(limit))
-    return result.scalar().all()
+    return result.scalars().all()
