@@ -12,9 +12,7 @@ class UserBase(BaseModel):
     last_name: str
     city: str
     state: str
-    country: str
     phone: str
-    dob: datetime
 
 
 class UserCreate(UserBase):
@@ -24,5 +22,5 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: int
 
-    class config:
+    class Config:
         orm_mode = True

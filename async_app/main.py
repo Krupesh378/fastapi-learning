@@ -1,6 +1,7 @@
 """This module contians the APIs"""
 from fastapi import FastAPI, Depends
 from fastapi.responses import JSONResponse
+from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from . import crud, schemas
@@ -26,7 +27,7 @@ async def retrive_user(
     return await crud.get_user(session=session, user_id=user_id)
 
 
-@app.get("/users/", response_model=JSONResponse)
+@app.get("/users/", response_model=List[schemas.User])
 async def get_users(
     skip: int = 0,
     limit: int = 10,

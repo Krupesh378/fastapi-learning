@@ -6,11 +6,11 @@ from . import models, schemas
 
 
 async def create_user(session: AsyncSession, user: schemas.UserCreate):
-    user = models.User(**user.dict())
-    session.add(user)
+    user_data = models.User(**user.dict())
+    session.add(user_data)
     await session.commit()
-    await session.refresh(user)
-    return user
+    await session.refresh(user_data)
+    return user_data
 
 
 async def get_user(session: AsyncSession, user_id: int):

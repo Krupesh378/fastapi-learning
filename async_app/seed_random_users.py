@@ -16,19 +16,21 @@ def parse_user(data):
         "last_name": data["name"]["last"],
         "city": data["location"]["city"],
         "state": data["location"]["state"],
-        "country": data["location"]["country"],
         "phone": data["phone"],
-        "dob": data["dob"]["date"]
     }
 
 
 def post_user(user_payload):
     try:
         response = requests.post(API_URL, json=user_payload)
+        try:
+            resp_json = response.json()
+        except:
+            resp_json = response.text
         return {
             "username": user_payload["username"],
             "status": response.status_code,
-            "response": response.json()
+            "response": resp_json
         }
     except Exception as exc:
         return {
@@ -56,6 +58,6 @@ def load_and_post_users_concurrently(n: int = 50, max_works: int = 10):
 
 if __name__ == "__main__":
     load_and_post_users_concurrently(
-        n=100,
+        n=1,
         max_works=20
     )

@@ -16,4 +16,3 @@ class User(Base):
     city = Column(String)
     state = Column(String)
     phone = Column(String)
-    dob = Column(DateTime)
