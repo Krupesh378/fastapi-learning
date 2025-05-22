@@ -119,16 +119,18 @@ Visit:
 - API Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
-## Run within Docker
+## Run within Docker Compose File
 
-```bash
-docker run -d \
-  --name fastapi-crud-container \
-  -p 8000:8000 \
-  fastapi-crud-app:multi-stage
+### For up the containers
+```zsh
+docker compose up
 ```
 
-## Note: Before run within docker file please make sure you should installed/run postgresql.
+### For down the containers
+```zsh
+docker compose down
+```
+
 ---
 
 ## 📬 Available Endpoints
